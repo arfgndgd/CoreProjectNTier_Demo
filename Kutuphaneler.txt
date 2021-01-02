@@ -11,8 +11,8 @@
 	BLL,DAL
 *Microsoft.EntityFrameworkCore.Design => RunTime'da olusacak Configuration ayarlamalarýný saglar. appsettings.json ve startup.cs arasýnda configure iþlemlerinin yapýlmasý gerekir.
 	UI
-*Microsoft.AspNetCore.Identity.EntittyFrameworkCore => IdentityDbContext'in gelebilmesi icin gerekli olan yapý
-	
+*Microsoft.AspNetCore.Identity.EntityFrameworkCore => IdentityDbContext'in gelebilmesi icin gerekli olan yapý
+	DAL
 *Microsoft.Extension.Configuration
 	
 *Autofac => services.AddTransient gibi yapýlarý baska katmanlardan da yapýp katman bagýmsýz hale getirebilmek adýna ihtiyacýmýz olan yontemlerden birisi icin kullanýdgýmýz kütüphaneidr...

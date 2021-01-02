@@ -6,3 +6,27 @@ BLL ->Data Access -> Manager
 DAL ->Repository
 ENTITIES ->Model
 UI->Presentation
+
+Gerekli kütüphaneler indirilmeli 
+
+Entities -> Models,Enums
+  
+DAL  "Dependency Injection"
+
+**Repositorylerde her class için interface class açmanýn nedeni var.Her bir class için interface repository açmamýz lazým çünkü "Dependency Injection" tetiklenmeli. Eðer yapmazsak Startup.cs içine yazdýðýmýz;
+		//services.AddTransient<IProductRepository,ProductRepository>();  kullanamayýz. yani demektir ki her interface için ayrý nesne ver instance al demektir.
+
+	Context -> MyContext: Eðer kurmak istediðimiz veri tabaný yapýsýnda Identity kullanacaksak DbContext'ten miras almamalýyýz. Çünkü Identity kendi tablolarý tamamen hazýr bir yapý sunar ve bu hazýr yapýyý DbContext saðlayamaz. Miras alacaðýmýz sýnýf "IdentityDbContext" olmalý
+	Repositories
+		Abstract:
+		Her bir class için interface repository açmamýz lazým çünkü "Dependency Injection" tetiklenmeli. Classlar IRepositoryden miras aldýðý için implement edilmek zorunda deðil
+				IRepository 
+					public interface IRepository<T> where T:BaseEntity (metodlarýmýzý yazýyoruz)
+				IProductRepository
+					public interface IProductRepository:IRepository<Product> 
+		Concretes:
+		Her class için class tipinde repository açýlmalý. BaseRepositoryde olmalý ki kod tekrarý olmasýn. Daha sonra abstract interface classlarý 
+				BaseRepository (implement interface)(Constructor açýlmalý: MyContext _db; prmtr MyContext db)
+					public class BaseRepository<T> : IRepository<T> where T : BaseEntity
+				ProductRepository (class isminin altýna kýrmýzý çizgi gelir constructorda halledilmeli(MyContext db):base(db))
+					public class ProductRepository:BaseRepository<Product>,IProductRepository
