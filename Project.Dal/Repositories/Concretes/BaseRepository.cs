@@ -7,6 +7,7 @@ using System.Text;
 
 namespace Project.Dal.Repositories.Concretes
 {
+    //BaseRepositoryi abstract yapmamıza gerek yok. Çünkü Manager katmanında instance almamız lazım.
     public class BaseRepository<T> : IRepository<T> where T : BaseEntity
     {
 

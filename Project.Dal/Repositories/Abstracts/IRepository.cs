@@ -9,5 +9,6 @@ namespace Project.Dal.Repositories.Abstracts
     public interface IRepository<T> where T:BaseEntity
     {
         void Add(T item);
+       
     }
 }

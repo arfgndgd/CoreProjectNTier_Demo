@@ -66,6 +66,7 @@ namespace Project.CoreUI
 
             // Eger katmanlý bir yapý kuruyorsanýz bu AddTransient olayýný kendi mimarinize göre þekillendirmek zorundasýnýz...Bunun iki yöntemi vardýr...Ya Autofac kütüphanesi kullanarak Injection Extension yapmak (Yani Injection'ý geniþletmek) veya kendi Extension metodunuzu static sýnýfta yaratarak bu Injection Extension'i manual yapmak...
 
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -5,6 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Not", "Not", "{BF841531-85EE-453B-B5AC-02D71D3E8152}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\core\drive\2020.12.7\CoreProjectNTier\KatmanBagimsizDI.txt = ..\..\core\drive\2020.12.7\CoreProjectNTier\KatmanBagimsizDI.txt
 		Kutuphaneler.txt = Kutuphaneler.txt
 		Notlar.txt = Notlar.txt
 	EndProjectSection
