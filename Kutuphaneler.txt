@@ -20,3 +20,4 @@
 *Autofac.Extensions.DependencyInjection => Autofac kütüphanesinin DbContext sýnýfýyla iletiþime gecebilmesi adýna servislerini belirleyebilmesi icin ihtiyacýmýz olan kütüphanedir
 	BLL
 *System.Configuration.ConfigurationManager => Configuration dosyalarýný katmanlar arasý iletiþime sokabilmek icin indirdigimiz kütüphanedir...
+	BLL

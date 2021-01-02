@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Project.Bll.ServiceExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,11 @@ namespace Project.CoreUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            
+            //Manual Extension yaptýgýmýzda kullanacagýmýz yöntemin icerisindeki metotlarý tetiklemek
+            //services.AddRepAndManServices(); //=> Extension metodumuz ile servisimizi kullanmak
+            //services.AddDbContextService(); //Manuel kullaným
+            //services.AddIdentityService();
 
 
             // Normal(N - Layered olmayan normal projelerde) Dependency Injection yapýsý Core'da su sekilde kurulur
@@ -66,7 +72,7 @@ namespace Project.CoreUI
 
             // Eger katmanlý bir yapý kuruyorsanýz bu AddTransient olayýný kendi mimarinize göre þekillendirmek zorundasýnýz...Bunun iki yöntemi vardýr...Ya Autofac kütüphanesi kullanarak Injection Extension yapmak (Yani Injection'ý geniþletmek) veya kendi Extension metodunuzu static sýnýfta yaratarak bu Injection Extension'i manual yapmak...
 
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

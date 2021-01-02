@@ -57,6 +57,7 @@ BLL ("Dependency Injection" Baselerin constructorý sayesinde) (DAL ve ENTITIESde
 				override ederiz. (Polymorphism)
 
 Þimdi öyle bir þey yapmalýyýz ki IRepository geldiðinde BaseRepository yaratmalý Core projesi. 
-KATMAN BAÐIMSIZ DEPENDENCY INJECTION
+KATMAN BAÐIMSIZ DEPENDENCY INJECTION (notlarý var) 
+
 			
 				
