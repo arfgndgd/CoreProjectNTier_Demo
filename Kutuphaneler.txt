@@ -1,6 +1,6 @@
 
 *Microsoft.EntityFrameworkCore
-	BLL,UI,DAL
+	DAL
 *Microsoft.EntityFrameworkCore.SqlServer => EntityFramework islemlerini yapabilmek icin
 	BLL,UI,DAL
 *Microsoft.EntityFrameworkCore.Proxies => LazyLoading tetiklenebilmesi icin
@@ -16,7 +16,7 @@
 *Microsoft.Extension.Configuration
 	
 *Autofac => services.AddTransient gibi yapýlarý baska katmanlardan da yapýp katman bagýmsýz hale getirebilmek adýna ihtiyacýmýz olan yontemlerden birisi icin kullanýdgýmýz kütüphaneidr...
-	
+	BLL
 *Autofac.Extensions.DependencyInjection => Autofac kütüphanesinin DbContext sýnýfýyla iletiþime gecebilmesi adýna servislerini belirleyebilmesi icin ihtiyacýmýz olan kütüphanedir
-	
+	BLL
 *System.Configuration.ConfigurationManager => Configuration dosyalarýný katmanlar arasý iletiþime sokabilmek icin indirdigimiz kütüphanedir...
