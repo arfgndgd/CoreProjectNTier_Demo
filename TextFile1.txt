@@ -1,1 +1,8 @@
 Blank Solution
+Class Library(.NET Standart) -> Bll, Dal, Entities (projelere týkla bu 2.0'ý böyle yap "netstandard2.1")
+Asp.Net Core Web Application -> CoreUI
+
+BLL ->Data Access -> Manager
+DAL ->Repository
+ENTITIES ->Model
+UI->Presentation
