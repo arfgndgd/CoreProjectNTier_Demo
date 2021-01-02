@@ -1,5 +1,5 @@
 Blank Solution
-Class Library(.NET Standart) -> Bll, Dal, Entities (projelere tıkla bu 2.0'ı böyle yap "netstandard2.1")
+Class Library(.NET Standart) -> Bll, Dal, Entities (projelere tıkla bu 2.0'ı böyle yap "netstandard2.1" EntityFramework için önemli)
 Asp.Net Core Web Application -> CoreUI
 
 BLL ->Data Access -> Manager

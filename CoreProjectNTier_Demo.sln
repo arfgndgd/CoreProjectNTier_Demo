@@ -5,7 +5,8 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Not", "Not", "{BF841531-85EE-453B-B5AC-02D71D3E8152}"
 	ProjectSection(SolutionItems) = preProject
-		TextFile1.txt = TextFile1.txt
+		Kutuphaneler.txt = Kutuphaneler.txt
+		Notlar.txt = Notlar.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Entities", "Project.Entities\Project.Entities.csproj", "{4EF1D969-6DC4-444A-8B7A-36A3DE17EAB5}"

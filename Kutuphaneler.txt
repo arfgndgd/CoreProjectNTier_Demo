@@ -1,0 +1,22 @@
+
+*Microsoft.EntityFrameworkCore
+	BLL,UI,DAL
+*Microsoft.EntityFrameworkCore.SqlServer => EntityFramework islemlerini yapabilmek icin
+	BLL,UI,DAL
+*Microsoft.EntityFrameworkCore.Proxies => LazyLoading tetiklenebilmesi icin
+	DAL
+*Microsoft.EntityFrameworkCore.Tools => migration islemlerini terminalden yapabilmek icin gerekli
+	DAL
+*Microsoft.AspNetCore.Identity => Sizin .Net Core'un sundugu Identity yapýsýný kullanabilmeniz icin gerekli olan kütüphanedir. (Authentication, Autherozition gibi iþlemleri kolaylaþtýrýr)
+	BLL,DAL
+*Microsoft.EntityFrameworkCore.Design => RunTime'da olusacak Configuration ayarlamalarýný saglar. appsettings.json ve startup.cs arasýnda configure iþlemlerinin yapýlmasý gerekir.
+	UI
+*Microsoft.AspNetCore.Identity.EntittyFrameworkCore => IdentityDbContext'in gelebilmesi icin gerekli olan yapý
+	
+*Microsoft.Extension.Configuration
+	
+*Autofac => services.AddTransient gibi yapýlarý baska katmanlardan da yapýp katman bagýmsýz hale getirebilmek adýna ihtiyacýmýz olan yontemlerden birisi icin kullanýdgýmýz kütüphaneidr...
+	
+*Autofac.Extensions.DependencyInjection => Autofac kütüphanesinin DbContext sýnýfýyla iletiþime gecebilmesi adýna servislerini belirleyebilmesi icin ihtiyacýmýz olan kütüphanedir
+	
+*System.Configuration.ConfigurationManager => Configuration dosyalarýný katmanlar arasý iletiþime sokabilmek icin indirdigimiz kütüphanedir...
