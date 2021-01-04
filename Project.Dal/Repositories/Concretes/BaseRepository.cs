@@ -3,6 +3,7 @@ using Project.Dal.Repositories.Abstracts;
 using Project.Entities.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Project.Dal.Repositories.Concretes
@@ -21,6 +22,11 @@ namespace Project.Dal.Repositories.Concretes
         {
             _db.Set<T>().Add(item);
             _db.SaveChanges();
+        }
+
+        public List<T> GetAll()
+        {
+            return _db.Set<T>().ToList();
         }
     }
 }

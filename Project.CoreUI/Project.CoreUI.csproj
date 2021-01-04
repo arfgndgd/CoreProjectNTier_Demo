@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Project.Bll\Project.Bll.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\DataVM\" />
+  </ItemGroup>
+
 </Project>

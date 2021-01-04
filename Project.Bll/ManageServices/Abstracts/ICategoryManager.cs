@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Project.Bll.ManageServices.Abstracts
 {
-    interface ICategoryManager:IManager<Category>
+    public interface ICategoryManager :IManager<Category>
     {
     }
 }

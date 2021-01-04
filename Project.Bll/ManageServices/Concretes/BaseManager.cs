@@ -25,5 +25,10 @@ namespace Project.Bll.ManageServices.Concretes
             }
             return "Ekleme başarısız";
         }
+
+        public List<T> GetAll()
+        {
+            return _irp.GetAll();
+        }
     }
 }
