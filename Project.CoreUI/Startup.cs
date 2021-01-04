@@ -25,7 +25,7 @@ namespace Project.CoreUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            
+            //ServiceExtension içindeki sýnýflarýn configurasyonu
             //Manual Extension yaptýgýmýzda kullanacagýmýz yöntemin icerisindeki metotlarý tetiklemek
             //services.AddRepAndManServices(); //=> Extension metodumuz ile servisimizi kullanmak
             //services.AddDbContextService(); //Manuel kullaným

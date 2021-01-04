@@ -9,8 +9,10 @@ using Microsoft.Extensions.Configuration;
 
 namespace Project.Bll.ServiceExtensions
 {
+    //Sakınn Castle kütüphanesini ekleme Configuration olmalı
     public static class DbContextService
     {
+        //Manuel kullanım
         public static IServiceCollection AddDbContextService(this IServiceCollection services)
         {
             ServiceProvider provider = services.BuildServiceProvider();

@@ -59,5 +59,12 @@ BLL ("Dependency Injection" Baselerin constructorý sayesinde) (DAL ve ENTITIESde
 Þimdi öyle bir þey yapmalýyýz ki IRepository geldiðinde BaseRepository yaratmalý Core projesi. 
 KATMAN BAÐIMSIZ DEPENDENCY INJECTION (notlarý var) 
 
-			
+BLL içine ServiceExtension klasörü açýp içine aþaðýdaki classlarý açýyoruz
+	DbContextService -> Veritabaný configurasyon ayarlarýný yapar -> services.AddDbContextService();
+	IdentityExtensionService -> Þifreleme, User,Role,Authorize gibi iþlemlerin hazýr olduðu kütüphanedir -> services.AddIdentityService();
+	RepManServiceExtension -> Extension metodu ile servisi kullanýr -> services.AddRepAndManServices();
+	
+	
+            
+            
 				
