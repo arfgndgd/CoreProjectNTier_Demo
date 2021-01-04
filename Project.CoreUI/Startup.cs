@@ -25,6 +25,7 @@ namespace Project.CoreUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddAuthentication();
             //ServiceExtension içindeki sýnýflarýn configurasyonu
             //Manual Extension yaptýgýmýzda kullanacagýmýz yöntemin icerisindeki metotlarý tetiklemek
             //services.AddRepAndManServices(); //=> Extension metodumuz ile servisimizi kullanmak
@@ -90,6 +91,8 @@ namespace Project.CoreUI
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseRouting();
 
