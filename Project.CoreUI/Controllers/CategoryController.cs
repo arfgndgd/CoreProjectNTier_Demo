@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Project.Bll.ManageServices.Abstracts;
+using Project.Entities.Models;
 
 namespace Project.CoreUI.Controllers
 {
@@ -29,9 +30,11 @@ namespace Project.CoreUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddCategory(CategoryPageVM item)
+        public IActionResult AddCategory(Category category)
         {
-            return View();
+            TempData["mesaj"] = _icm.Add(category);
+
+            return RedirectToAction("AddCategory");
         }
     }
 }

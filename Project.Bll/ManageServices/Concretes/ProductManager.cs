@@ -16,12 +16,12 @@ namespace Project.Bll.ManageServices.Concretes
 
         public override string Add(Product item)
         {
-            if (item.ProductName == null || item.ProductName.Trim() == ""|||| item.CreatedDate == null)
+            if (item.ProductName == null || item.ProductName.Trim() == ""|| item.CreatedDate == null)
             {
                 return "Ekleme basarısız... İsim hatası var";
             }
             _irp.Add(item);
             return "Ekleme başarılı  ";
         }
-    }
+    } 
 }

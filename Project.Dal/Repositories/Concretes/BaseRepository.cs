@@ -13,7 +13,7 @@ namespace Project.Dal.Repositories.Concretes
     {
 
         MyContext _db;
-
+         
         public BaseRepository(MyContext db)
         {
             _db = db;

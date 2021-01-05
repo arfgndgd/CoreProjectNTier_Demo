@@ -80,5 +80,11 @@ Autofac Dependency Injection(Tetikleme: Program.cs->buradaki IHostBuilder'da Con
 	
 ************************************ MÝMARÝ TAMAMLANDI ****************************************
             
-            
+CoreUI
+
+Controller->CategoryController
+
+Models->PageVM->CategoryPageVM
+
+Dal katmanýnda IRepository içine iþimize yarayacak tüm metodlarý yazabiliriz. Implement ettiðin BaseRepositoryde Linq; kütüphanesini ekle. Ayný iþlemi iþ katmaný için BLL içinde IManager içinde metod ekleyip BaseManagerda implement et
 				
