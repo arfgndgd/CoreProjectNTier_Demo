@@ -21,7 +21,11 @@ namespace Project.CoreUI.Controllers
 
         public IActionResult CategoryList()
         {
-            return View();
+            CategoryPageVM cpvm = new CategoryPageVM
+            {
+                Categories = _icm.GetAll()
+            };
+            return View(cpvm);
         }
 
         public IActionResult AddCategory()
@@ -34,7 +38,7 @@ namespace Project.CoreUI.Controllers
         {
             TempData["mesaj"] = _icm.Add(category);
 
-            return RedirectToAction("AddCategory");
+            return RedirectToAction("AddCategory"); 
         }
     }
 }

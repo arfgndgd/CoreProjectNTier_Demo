@@ -1,7 +1,21 @@
-﻿
+﻿@model CategoryPageVM
 @{
     ViewData["Title"] = "AddCategory";
 }
 
-<h1>AddCategory</h1>
+@TempData["mesaj"]
 
+
+<form asp-action="AddCategory" asp-controller="Category" method="post">
+    <div>
+        <input type="text" asp-for="Category.CategoryName" placeholder="Kategori Ismi" />
+
+    </div>
+
+    <div>
+        <input type="text" asp-for="Category.Description" placeholder="Acıklaması" />
+    </div>
+    <div>
+        <button class="btn btn-primary">Ekle</button>
+    </div>
+</form>
