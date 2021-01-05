@@ -26,6 +26,8 @@ namespace Project.Bll.DependencyResolvers
             builder.RegisterType<ProductRepository>().As<IProductRepository>();
             builder.RegisterType<CategoryManager>().As<ICategoryManager>();
             builder.RegisterType<CategoryRepository>().As<ICategoryRepository>();
+            builder.RegisterType<UserManagerSpecial>().As<IUserManagerSpecial>();
+            builder.RegisterType<LoginManager>().As<ILoginManager>();
 
             IServiceCollection ni = new ServiceCollection();
 

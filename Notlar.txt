@@ -90,5 +90,19 @@ Models->PageVM->CategoryPageVM
 
 Controllerda IActionlarý açýp Viewlarý düzenledik
 
+Migration yapmak için çalýþan proje UI katmaný olmalý. DAL katmanýný ise Consoleda seçmek gerekir.
+
+
+
+**Identity Kütüphanesini kullandýðýmýz için veritabanýnda otomatik olarak "Role, User, Login" gibi classlar oluþtu. Bunlarýn kontrolünü ele alabiliriz ancak bunun için yalnýzca "BLL" yani iþ katmanýnýnda Manage kýsmýna Login, User abstract interfaceleri ekleyip Concreteslere de eklesek bize yeterli olur. Ayrýyeten  DAL katmanýnda Repository, Entitiesde class eklemeye gerek yok.
+Bll
+	ManageServices->Abstracts                    Concretes
+		ILoginManager								 LoginManager			
+		IUserManagerSpecial							 UserManagerSpecial
+
+**Identity'in kendi Userýný kullanmak istersek yukarýdaki classlarda kullanmak istediðimiz class "IdentityUser"'dýr.
+
+IUserManagerSpecialýn miras verdiði UserManagerSpecial sýnýfýnda interfacei implement edeceðiz
+	Bu iþlemi AutofacBusinessModule içinde RegisterType ile tip ddeðiþimine maruz býrakmamýz lazým (tüm abstracts ve concretes için)
 
 				
