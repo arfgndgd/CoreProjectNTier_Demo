@@ -6,9 +6,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Project.Bll.ManageServices.Abstracts;
 using Project.Entities.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Project.CoreUI.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
 
@@ -18,7 +20,7 @@ namespace Project.CoreUI.Controllers
         {
             _icm = icm;
         }
-
+        //[AllowAnonymous]
         public IActionResult CategoryList()
         {
             CategoryPageVM cpvm = new CategoryPageVM

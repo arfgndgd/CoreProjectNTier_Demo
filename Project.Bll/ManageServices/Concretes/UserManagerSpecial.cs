@@ -19,7 +19,7 @@ namespace Project.Bll.ManageServices.Concretes
 
         }
 
-        public async Task<bool> AddUser(AppUser item)
+        public async Task<bool> AddUser(IdentityUser item)
         {
             //Sadece ASenkron olarak yaratılmıs metotlara await diyebilirsiniz...
             //UserManager CreateAsync metodu ilgili kullanıcıyı eklemenizi saglayan metottur...CreateAsync metodu size bir task result döndürür(yani ilgili görev basarılı oldu mu olmadı mı ) 

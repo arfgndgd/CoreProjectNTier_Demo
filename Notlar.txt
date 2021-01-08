@@ -13,7 +13,7 @@ Entities -> Models,Enums
   
 DAL  ("Dependency Injection" Baselerin constructorý sayesinde) (Entities katmanýndan referans almalý)
 
-**Repositorylerde her class için interface class açmanýn nedeni var.Her bir class için interface repository açmamýz lazým çünkü "Dependency Injection" tetiklenmeli. Eðer yapmazsak Startup.cs içine yazdýðýmýz;
+**Repositorylerde her class için interface class açmanýn nedeni var. Her bir class için interface repository açmamýz lazým çünkü "Dependency Injection" tetiklenmeli. Eðer yapmazsak Startup.cs içine yazdýðýmýz;
 		//services.AddTransient<IProductRepository,ProductRepository>();  kullanamayýz. yani demektir ki her interface için ayrý nesne ver instance al demektir.
 
 	Context -> MyContext: Eðer kurmak istediðimiz veri tabaný yapýsýnda Identity kullanacaksak DbContext'ten miras almamalýyýz. Çünkü Identity kendi tablolarý tamamen hazýr bir yapý sunar ve bu hazýr yapýyý DbContext saðlayamaz. Miras alacaðýmýz sýnýf "IdentityDbContext" olmalý
@@ -105,4 +105,46 @@ Bll
 IUserManagerSpecialýn miras verdiði UserManagerSpecial sýnýfýnda interfacei implement edeceðiz
 	Bu iþlemi AutofacBusinessModule içinde RegisterType ile tip ddeðiþimine maruz býrakmamýz lazým (tüm abstracts ve concretes için)
 
-				
+
+AccountController açtýk 
+	Register Iactioný açtýk yalnýz asenkron olmalý çünkü bizim UserManagerSpecial içinde kullandýðýmýz AddUser Metodumuz asenkron 
+	(Bu eziyetlerle uðraþmamýzýn nedeni sadece Identity kütüphanesini kullanmamýzdan dolayý)
+
+	RegisterSuccess Iactioný da açtýk üye olduðunda doðrulama yapmasý için
+
+***AutofacBusinessModule sýnýfýmýzda 34. satýrdaki ni.AddIdentity'e password, kullanýcý ismi gibi propertylerin limitleri belirledik. Mesela password en az 5 karakterli olmalý
+
+Register iþlemi tamamlandýktan sonra veritabanýna baktýðýmýzda þifreyi kendisi hushlamýþ oluyor. Bu identity kütüphanesi sayesindedir. Ama biz kendi þifreleme sýnýfýmýzý yazabiliriz 
+
+	Login Iactioný açtýk 
+
+
+	 ***Tamamem authorization yapmak için gidip mesela Category classýnda action ya da direkt classýn isminin	üstüne [Authorize] yazmamýz lazým
+		Bir action bu iþlemden etkilenmemesi için [AllowAnonymous] demek gerekir.
+
+***Yukarýdaki Authorize iþlemini yaptýðýmýz iþin Logini actioný direkt kendisi çalýþýr. Startup.cs klasöründe Category controllerýna yönlendirme yapmýþ olmamýza raðmen Authorize iþleminden dolayý gider bize önce Login yapmamýz gerektirðini söyler
+	Ancak biz "Remember Me" clicki ekledik bu sayede tarayýcý bizi Session olarak tutar. Bunu saðlayan da Identity kütüphanesidir.
+
+
+
+	********************************* INTERFACELERÝ TEKRAR ET ************************************
+
+			MVC
+			Eriþim belirteci default olarak PUBLIC
+			Buradaki metodlarýn yaþam alanlarý olamaz ancak bu sadece MVCde geçerlidir. 
+
+			CORE
+			.NET Coreda c# 8.0dan sonra hem eriþim belirteci hem de yaþam alaný verebiliriz
+
+
+	Bunlara ek olarak biz kendi oluþturduðumuz classlarý da Identity kütüphanesi ile birleþtirebiliriz   
+
+Entities 
+
+	CoreInterface   
+		IEntity (Dependency Injection)
+			BaseEntity classýna buradan miras vereceðiz
+			Dal katmanýnda BaseRepositorye de miras alýnan sýnýf olarak eklenmeli
+
+			Mülakat Soru:
+			Dependency Injectionýnda sorun olmamasý için tip kýsýtlamasý yerine interface eklemek gerekir. BaseRepository IEntity eklemek gibi  
