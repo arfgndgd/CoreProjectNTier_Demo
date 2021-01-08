@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Project.Dal.DALModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +16,6 @@ namespace Project.Bll.ManageServices.Abstracts
         //Normal bir metodumuz asenkron calısmak istiyorsa basına Task almak zorundadır...
 
         //Eger kendimize has bir User'imiz yok ise IdentityUser üzerinden bu işlemleri yaparız...
-        Task<bool> AddUser(IdentityUser item);
+        Task<bool> AddUser(AppUser item);
     }
 }

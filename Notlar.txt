@@ -148,3 +148,9 @@ Entities
 
 			Mülakat Soru:
 			Dependency Injectionýnda sorun olmamasý için tip kýsýtlamasý yerine interface eklemek gerekir. BaseRepository IEntity eklemek gibi  
+
+Identityle sýnýf birleþtirmek istediðimiz için DAL katmanýnda AppUser classý açýp;
+	IdentityUser ve IEntity'den miras almamýz lazým 
+
+	Ayrýca;
+	AppUser , IdentityUser'dan miras alarak bu sýnýfýn özelliklerini icine almak istiyorsa artýk nerede IdentityUser kullandýðý isek oraya AppUser class'ýný yazmalýyýz...(ILoginManager, IUserManagerSpecial, UserManager, Controller, BusinessModule vs... ve MyContexte DbSet<> eklemek gerekir.) 

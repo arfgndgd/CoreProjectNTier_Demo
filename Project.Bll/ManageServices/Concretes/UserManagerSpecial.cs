@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Project.Bll.ManageServices.Abstracts;
+using Project.Dal.DALModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,17 +10,17 @@ namespace Project.Bll.ManageServices.Concretes
 {
     public class UserManagerSpecial : IUserManagerSpecial
     {
-        UserManager<IdentityUser> _umanager;
-        SignInManager<IdentityUser> _smanager;
+        UserManager<AppUser> _umanager;
+        SignInManager<AppUser> _smanager;
 
-        public UserManagerSpecial(UserManager<IdentityUser> umanager,SignInManager<IdentityUser> smanager)
+        public UserManagerSpecial(UserManager<AppUser> umanager,SignInManager<AppUser> smanager)
         {
             _umanager = umanager;
             _smanager = smanager;
 
         }
 
-        public async Task<bool> AddUser(IdentityUser item)
+        public async Task<bool> AddUser(AppUser item)
         {
             //Sadece ASenkron olarak yaratılmıs metotlara await diyebilirsiniz...
             //UserManager CreateAsync metodu ilgili kullanıcıyı eklemenizi saglayan metottur...CreateAsync metodu size bir task result döndürür(yani ilgili görev basarılı oldu mu olmadı mı ) 

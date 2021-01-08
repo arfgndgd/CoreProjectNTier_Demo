@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Project.Bll.ManageServices.Abstracts;
 using Project.CoreUI.Models.DataVM;
+using Project.Dal.DALModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace Project.CoreUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(AppUserVM avm)
         {
-            IdentityUser newUser = new IdentityUser { UserName = avm.UserName, Email = avm.Email, PasswordHash = avm.Password };
+            AppUser newUser = new AppUser { UserName = avm.UserName, Email = avm.Email, PasswordHash = avm.Password };
             if (await _ums.AddUser(newUser)) 
             {
                 return RedirectToAction("RegisterSuccess");
@@ -51,7 +52,7 @@ namespace Project.CoreUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM item)
         {
-            bool result = await _ilm.SignInUser(new IdentityUser {UserName = item.UserName,PasswordHash=item.Password },item.RememberMe);
+            bool result = await _ilm.SignInUser(new AppUser {UserName = item.UserName,PasswordHash=item.Password },item.RememberMe);
             if (result)
             {
                 return RedirectToAction("CategoryList", "Category");

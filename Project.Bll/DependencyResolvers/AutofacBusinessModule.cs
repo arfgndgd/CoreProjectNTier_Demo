@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;//
 using Project.Bll.ManageServices.Abstracts;//
 using Project.Bll.ManageServices.Concretes;//
 using Project.Dal.Context;
+using Project.Dal.DALModel;
 using Project.Dal.Repositories.Abstracts;//
 using Project.Dal.Repositories.Concretes;//
 using System;
@@ -31,7 +32,7 @@ namespace Project.Bll.DependencyResolvers
 
             IServiceCollection ni = new ServiceCollection();
 
-            ni.AddIdentity<IdentityUser, IdentityRole>(x => { x.Password.RequireDigit = false; x.Password.RequireLowercase = false; x.Password.RequireUppercase = false; x.Password.RequireNonAlphanumeric = false; x.Password.RequiredLength = 5; }).AddEntityFrameworkStores<MyContext>();
+            ni.AddIdentity<AppUser, IdentityRole>(x => { x.Password.RequireDigit = false; x.Password.RequireLowercase = false; x.Password.RequireUppercase = false; x.Password.RequireNonAlphanumeric = false; x.Password.RequiredLength = 5; }).AddEntityFrameworkStores<MyContext>();
 
             //bu noktada kesinlikle builder, Populate metodu ile Identity eklenmiş olan ServiceCollection nesnesini almak zorundadır...Yoksa Identity tablolarınızı acsa bile onun işlemlerini kullanamazsınız...Yani DI Identity icin calısmaz...Sadece tablolar acılmıs olur...
 
